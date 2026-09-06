@@ -1,0 +1,31 @@
+# PROJECT-STATE.yaml
+
+# Current operational state of the Workspace Standard repository.
+# Managed by the Workspace Control Plane.
+
+metadata:
+  version: "1.0.0"
+  last_updated: "2026-09-06"
+  status: "INITIALIZING"
+
+lifecycle:
+  current_state: "CONSTRUCTION"
+  phase: "PHASE_2_3"
+
+active_tasks:
+  - task_id: "construct-control-plane"
+    objective: "Implement foundational governance and state management."
+    status: "IN_PROGRESS"
+    assigned_agent: "PrincipalArchitectureAgent"
+
+locks:
+  # Resource locks for atomic state changes
+  project_state_write: "LOCKED"
+  orchestrator_config_write: "UNLOCKED"
+
+evidence_registry:
+  # References to persistent execution evidence
+  last_evidence_id: null
+
+unknowns:
+  - "Final engine integration capability (Cloud/NVIDIA) still under review."

@@ -1,0 +1,14 @@
+# template-task.yaml
+task_id: "ID_PLACEHOLDER"
+task_type: "GOVERNED_EXECUTION"
+objective: "TASK_GOAL"
+scope: "WORKSPACE_SCOPE"
+inputs: {}
+constraints: []
+authority: "commander"
+assigned_agent: "executor"
+required_tools: []
+expected_state: "EXPECTED_SYSTEM_STATE"
+success_criteria: "VALIDATION_EVIDENCE_PRESENT"
+failure_policy: "LOG_AND_ROLLBACK"
+rollback_policy: "ACTUAL_ROLLBACK_EXECUTION"
