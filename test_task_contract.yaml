@@ -1,0 +1,8 @@
+task_id: "test-001"
+task_type: "reference"
+objective: "Create a test file to verify orchestrator functionality"
+scope: "workspace"
+assigned_agent: "orchestrator"
+authority_level: "standard"
+expected_state: "File created successfully"
+tools: []

@@ -10,6 +10,10 @@ engines:
     type: "container"
     isolation: "gvisor"
     purpose: "devops_github_services_testing"
+  reference:
+    type: "process"
+    isolation: "none"
+    purpose: "reference_execution_for_testing"
 
 # רישום גרסאות מאושרות (SHA256 pinning)
 versions:
