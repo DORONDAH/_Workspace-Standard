@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Project: Inspect workspace",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-ChildItem -Force"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project: Open truth file",
+      "type": "shell",
+      "command": "code",
+      "args": [
+        "${workspaceFolder}/docs/00_project_truth.md"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

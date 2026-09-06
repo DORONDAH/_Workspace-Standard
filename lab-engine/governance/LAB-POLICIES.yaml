@@ -1,0 +1,25 @@
+# חוקי הברזל למעבדת ה-AI (LAB-POLICIES.yaml)
+# כולל הרחבות לסייבר ואבטחת מידע
+
+policies:
+  security:
+    - no_privileged_ops: "Forbidden to delete system files or access host root"
+    - runtime_sandbox: "Must use gVisor (docker) or Checkpoints (Hyper-V)"
+    - network_isolation: "All cyber-tasks require network=none by default, unless whitelisted"
+    - output_scrubbing: "Agent must scrub API keys/secrets from logs before displaying in Chat"
+    - cloud_governance: "All cloud resources must be tagged with ManagedBy: Antigravity-Lab and include an auto-deletion Ttl"
+    - social_secrets: "API tokens must be stored in secure vault, never hardcoded"
+  resource_usage:
+    - max_memory: "4GB"
+    - media_memory: "8GB"
+    - max_duration: "30min"
+    - cloud_budget: "Strict quota limits applied per subscription"
+    - social_rate_limit: "Follow network provider guidelines"
+    - nvidia_circuit_breaker: "Stop after 3 consecutive failures, lock for 10min"
+  integrity:
+    - hash_verification: "All scripts/images must be SHA256 validated against baseline"
+  error_handling:
+    - action_on_failure: "log_and_revert"
+    - logging: "mandatory_to_error_logs"
+  lifecycle:
+    - cleanup: "always_purge_on_exit"

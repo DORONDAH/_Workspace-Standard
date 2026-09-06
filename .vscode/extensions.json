@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-vscode.powershell",
+    "github.copilot",
+    "yzhang.markdown-all-in-one",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "oderwat.indent-rainbow",
+    "ms-vscode.makefile-tools"
+  ]
+}

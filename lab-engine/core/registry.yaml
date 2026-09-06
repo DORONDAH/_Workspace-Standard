@@ -1,0 +1,41 @@
+# מפת החלטות למעבדת ה-AI האוטונומית (registry.yaml)
+
+# מנועי ביצוע מוגדרים
+engines:
+  hyperv:
+    type: "vm"
+    isolation: "snapshot"
+    purpose: "infrastructure_active_directory_server2025"
+  docker:
+    type: "container"
+    isolation: "gvisor"
+    purpose: "devops_github_services_testing"
+
+# רישום גרסאות מאושרות (SHA256 pinning)
+versions:
+  # לדוגמה:
+  # alpine_latest: "sha256:..."
+
+# החלטות אוטומטיות
+decisions:
+  - task_pattern: "active_directory"
+    engine: "hyperv"
+  - task_pattern: "github_service"
+    engine: "docker"
+  - task_pattern: "web_test"
+    engine: "docker"
+    purpose: "web_browser_automation"
+  - task_pattern: "azure_infrastructure"
+    engine: "cloud_azure"
+    purpose: "cloud_resource_management"
+  - task_pattern: "video_editing_nvidia"
+    engine: "nvidia_nim_engine"
+    purpose: "high_quality_media_processing"
+  - task_pattern: "video_editing"
+    engine: "media_engine"
+    purpose: "standard_media_processing"
+  - task_pattern: "social_automation"
+    engine: "social_engine"
+    purpose: "social_media_scheduling_and_engagement"
+  - task_pattern: "unknown"
+    engine: "stop_and_ask"

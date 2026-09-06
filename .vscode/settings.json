@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "markdown.preview.breaks": true,
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "git.enabled": true
+}

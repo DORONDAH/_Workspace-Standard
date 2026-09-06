@@ -1,0 +1,24 @@
+# תבנית בסיס ל-Jellyfin (lab-engine/sandboxes/templates/jellyfin.yaml)
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest  # נחליף ב-SHA256 כשהשירות יאושר ב-Registry
+    container_name: jellyfin-lab
+    ports:
+      - "0:8096"
+    deploy:
+      resources:
+        limits:
+          memory: 4g  # תואם את ה-Policy המעודכן
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    volumes:
+      - /media/input:/config
+      - /media/output:/cache
+    networks:
+      - lab-net
+
+networks:
+  lab-net:
+    driver: bridge
+    internal: true # בידוד מלא (Air-Gap)
