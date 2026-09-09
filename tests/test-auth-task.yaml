@@ -1,0 +1,4 @@
+id: test-auth-task
+objective: "Test task for authorization flow"
+assigned_agent: "TestAgent"
+required_authority: "Supervisor"

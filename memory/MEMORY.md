@@ -5,3 +5,5 @@
 - [Orchestration Refactor](memory/orchestration-refactor.md) — Implementation of lifecycle state machine and orchestrator refactor.
 - [Implementation Completion](memory/implementation-completion.md) — Completion of task queue, governance, and validation implementation.
 - [Adversarial & Recovery Tests](memory/adversarial-recovery-tests.md) — Implementation of security and robustness test suites.
+
+- [Phase 2 Architecture Specification](phase-2-architecture-specification.md) - Layer ownership, reasoning/authorization separation, context boundaries, and explicit decision gates.

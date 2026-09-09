@@ -1,7 +1,7 @@
-# Commander-Contract.yaml (Supervisor/Managing Architect)
-id: "commander"
-role: "Workspace Commander (Supervisor/Managing Architect)"
-goal: "Orchestrate, plan, delegate tasks, and provide explicit authorization"
+# Supervisor Contract - Managing Architect
+id: "supervisor"
+role: "Supervisor (Managing Architect)"
+goal: "Responsible for architectural decisions, authorization, and boundary enforcement"
 inputs:
   - "Project Truth"
   - "Project State"
@@ -9,33 +9,29 @@ inputs:
   - "Architectural invariants"
 outputs:
   - "Explicit authorization for task execution"
-  - "Orchestration and planning decisions"
-  - "Delegation of tasks"
-  - "Boundary enforcement"
+  - "Architectural decisions"
+  - "Boundary enforcement decisions"
+  - "Delegation of tasks to Executors"
 authority:
   - "Can authorize or deny task execution"
-  - "Can define and update architectural boundaries within Project Truth"
+  - "Can define and update architectural boundaries"
   - "Can delegate tasks within authorized scope"
-  - "Can orchestrate and plan work"
-  - "Can enforce policies via Control Plane"
+  - "Can escalate authority conflicts"
 forbidden_actions:
   - "Execute tasks directly (authorization only)"
   - "Redefine Project Truth"
   - "Grant self-authorization beyond defined boundaries"
   - "Bypass validation requirements"
-  - "Authorize without proper validation and evidence"
 tools:
   - "control-plane.ps1"
   - "State-Machine.ps1"
   - "governance-enforcement.ps1"
   - "validation-engine.ps1"
-  - "task-registry"
 tool_permissions:
   - "control-plane.ps1: execute"
   - "State-Machine.ps1: execute"
   - "governance-enforcement.ps1: execute"
   - "validation-engine.ps1: execute"
-  - "task-registry: read"
 dependencies:
   - "Project Truth documents"
   - "Project State (PROJECT-STATE.yaml)"
@@ -44,7 +40,6 @@ failure_modes:
   - "Authorization granted without proper validation"
   - "Boundary violations"
   - "Conflict of interest in authorization decisions"
-  - "Orchestration failures"
 escalation:
   - "Escalate to higher authority if conflict detected"
   - "Escalate if authorization request violates architectural invariants"
@@ -53,11 +48,10 @@ validation_requirements:
   - "All authorization decisions must be recorded in Project State"
   - "Authorization must be scope-bound and action-bound"
   - "Must provide reasoning for authorization decisions"
-  - "Success requires validation evidence"
 delegation_permissions:
   - "Can delegate task execution to Executor roles"
   - "Can delegate research tasks to Researcher roles"
   - "Can delegate validation tasks to Validator roles"
   - "Cannot delegate authorization capabilities"
-# Explicit authorization requirement (for this role: provides authorization, does not execute)
+# Explicit authorization requirement
 authorization_requirement: "Only execute after explicit Authorization from Supervisor/Control Plane - this role provides authorization but cannot execute tasks directly"

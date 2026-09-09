@@ -22,3 +22,12 @@ Enable multiple AI agents, runtimes, and tools to collaborate on projects while 
 - Reconstruction of operational context without prior chat logs.
 - All actions validated against machine-readable contracts.
 - Integrity verification (SHA256) of critical artifacts.
+
+## Context Layers
+The Workspace Standard implements a layered architecture to ensure proper separation of concerns:
+
+1. **Core Vocabulary**: Foundational definitions and concepts that are immutable and shared across all contexts.
+2. **Professional Vocabulary**: Domain-specific terms and practices that extend the core vocabulary for specific professional contexts.
+3. **Agent Operating Contract**: Explicitly defined capabilities, permissions, and limitations for each agent role.
+4. **Decision Framework**: The governance structure that separates reasoning from authorization, ensuring agents cannot authorize their own actions.
+5. **Context/Adapter Architecture**: The dynamic layer that binds the static architecture to specific project realities through PROJECT-STATE.yaml and environment-specific adaptations.
