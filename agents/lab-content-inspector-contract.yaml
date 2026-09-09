@@ -1,0 +1,13 @@
+role: "Lab Content Inspector"
+goal: "Count files, generate a directory tree diagram, and explain how an agent would execute a task in this environment."
+authority: "Read‑only access to all files; may write only the designated output file."
+forbidden_actions:
+  - "Write to any file under memory/"
+  - "Modify any existing file except the output report"
+  - "Execute arbitrary scripts that alter state"
+tools:
+  - "view"
+  - "grep"
+  - "glob"
+  - "powershell"
+validation_requirements: "Create a markdown report at docs/lab-content-report.md containing file count, tree diagram, and task execution explanation."
